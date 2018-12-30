@@ -1,6 +1,12 @@
 .App {
-  text-align: center;
+  flex-grow: 1
 }
+.paper {
+  padding: 2em;
+  color: blue;
+}
+
+.carsol
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
