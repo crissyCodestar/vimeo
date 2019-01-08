@@ -1,0 +1,35 @@
+
+.blur_bg {
+  position: absolute;
+
+  width: 200%;
+  height: 200%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(20px) hue-rotate(10deg);
+  -webkit-filter: blur(20px) hue-rotate(10deg);
+  -moz-filter: blur(20px) hue-rotate(10deg);
+  -o-filter: blur(20px) hue-rotate(10deg);
+  -ms-filter: blur(20px) hue-rotate(10deg);
+  left: -30px;
+  top: -30px;
+  z-index: -1;
+  opacity: .85;
+background-blend-mode:darken;
+}
+.blur_bg::before {
+  width: 100%;
+  height: 100%;
+  content: '';
+display: block;
+position: absolute;
+
+}
+
+.image {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  overflow: hidden;
+}

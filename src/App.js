@@ -12,42 +12,36 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      carouselVideos: [],
-      mainVideos: []
+      carouselInfo: [],
+      mainInfo: []
     }
   }
 
   componentDidMount(){
     Vimeo.carouselVideos().then(vids => {
+      vids = vids.splice(1, vids.length)
       this.setState({
-        carouselVideos: vids
+        carouselInfo: vids
       })
+
     })
     Vimeo.mainVideos().then(vids => {
         vids = vids.splice(1, vids.length)
       this.setState({
-        mainVideos: vids
+        mainInfo: vids
       })
     })
   }
 
   render() {
     const { classes } = this.props
-    const { carouselVideos, mainVideos } = this.state
+    const { carouselInfo, mainInfo } = this.state
+    console.log("APP",carouselInfo);
     return (
       <div className='App'>
         <Grid container>
-        <CarouselContainer carouselVideos={carouselVideos} />
-        {/* <Grid item xs={12}  className={classes.header}>
-           <Paper md={12} lg={6} className={classes.paper}>xs</Paper>
-         </Grid>
-         <Grid item xs={12} className={classes.main}>
-           <Paper className={classes.paper}>xs</Paper>
-         </Grid>
-         <Grid item xs={12}>
-           <Paper className='paper'>xs</Paper>
-         </Grid>*/}
-         <Main mainVideos={mainVideos}/>
+          <CarouselContainer carouselInfo={carouselInfo} />
+          <Main mainInfo={mainInfo}/>
        </Grid>
       </div>
     );

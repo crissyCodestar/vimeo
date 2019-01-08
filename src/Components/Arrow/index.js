@@ -1,18 +1,36 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ArrowBackIos, ArrowForwardIos } from '@material-ui/icons';
+import { withStyles } from '@material-ui/core/styles';
+import arrowStyles from './arrowStyles';
 
-
- const Arrow = ({direction, onClick, size}) => (
-  <button
-    onClick={onClick}
-  >
+ const Arrow = ({direction, onClick, size, classes}) => (
+<div>
     {
       direction === 'left' ?
-        <ArrowBackIos style={{fontSize: size || 20 }}/>
+      <a
+        href='#'
+        onClick={onClick}
+        className={classes.root}
+      >
+        <ArrowBackIos style={{fontSize: size || 40}}/>
+          </a>
         :
-        <ArrowForwardIos style={{fontSize: size || 20  }}/>
+        <a
+          href='#'
+          onClick={onClick}
+          className={classes.right}
+        >
+        <ArrowForwardIos style={{fontSize: size || 40}}/>
+        </a>
     }
 
-  </button>
+</div>
 );
-export default Arrow
+
+Arrow.propTypes = {
+  children: PropTypes.node,
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(arrowStyles)(Arrow);
