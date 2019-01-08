@@ -1,49 +1,105 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Paper, Grid, Typography } from '@material-ui/core';
+import { Paper, Grid, Typography, List } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-import Carousel from '../Carousel';
+import carouselContainerStyles from './carouselContainerStyles';
 import Arrow from '../Arrow';
-import carouselContainerStyles from './CarouselContainerStyles';
+import CarouselIndicator from '../CarouselIndicator';
+import CarouselSlides from '../CarouselSlides';
 
 class CarouselContainer extends Component {
   constructor() {
-    super();
-    this.state={}
+    super()
+    this.state = {
+      activeIndex: 0,
+    }
+    this.previousSlide = this.previousSlide.bind(this);
+    this.nextSlide = this.nextSlide.bind(this);
+    this.goToSlide = this.goToSlide.bind(this);
+  }
+
+  goToSlide(index){
+    this.setState({
+      activeIndex: index
+    })
+  }
+
+
+  previousSlide(e) {
+    e.preventDefault();
+
+    let index = this.state.activeIndex;
+    let { carouselInfo } = this.props;
+    let childLength = carouselInfo.length;
+
+    if(index < 1) {
+      index = childLength;
+    }
+
+    --index;
+
+    this.setState({
+      activeIndex: index
+    })
+  }
+
+
+
+  nextSlide(e){
+    e.preventDefault();
+
+    let index = this.state.activeIndex;
+    let { carouselInfo } = this.props;
+    let childLength = carouselInfo.length - 1;
+
+    if(index === childLength){
+      index = -1;
+    }
+
+    ++index;
+
+    this.setState({
+      activeIndex: index
+    });
   }
 
   render(){
-    const {classes} = this.props
+    const {classes, carouselInfo} = this.props
+    const { activeIndex } =this.state
   return(
-    <div>
-
-      <Carousel title='Carousel'>
-
-  {/*      <Grid container className={classes.item}>
-          <Grid item xs={10}>
-            <Paper>
-              Photo
-            </Paper>
-          </Grid>
-          <Grid item xs={10}>
-            Title
-          </Grid>
-          <Grid item xs={10}>
-            Description
-          </Grid>
-        </Grid>*/}
-        <Typography variant="h2" gutterBottom className={classes.item}>
-          Item 1
-        </Typography>
-
-        <Typography variant="h2" gutterBottom className={classes.item}>
-          Item 2
-        </Typography>
-        <Typography variant="h2" gutterBottom className={classes.item}>
-          Item 3
-        </Typography>
-      </Carousel>
-
+    <div className={classes.root}>
+      <Arrow
+        direction='left'
+        size='50'
+        onClick={e => this.previousSlide(e)}
+        />
+      <Grid container >
+        {carouselInfo.map((info, index) =>
+          <CarouselSlides
+            key={index}
+            index={index}
+            activeIndex={activeIndex}
+            info={info}
+            />
+        )}
+      </Grid>
+      <Arrow
+        direction='right'
+        onClick={e => this.nextSlide(e)}
+        />
+      <List className={classes.carouselIndicators}>
+        {carouselInfo.map((info, index) =>
+          <CarouselIndicator
+            key={index}
+            index={index}
+            activeIndex={activeIndex}
+            isActive={activeIndex === index}
+            info={info}
+            media={info.media}
+            onClick={e => this.goToSlide(index)}
+            />
+        )}
+      </List>
     </div>
   )
 }}
