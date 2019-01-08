@@ -1,44 +1,92 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Viemo Code Challenge
 
-## Available Scripts
+Carousel and main layout with photos, information and links to trailers.
 
-In the project directory, you can run:
+# Getting Started
 
-### `npm start`
+## NPM or YARN
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You should have npm or yarn installed in your environment if not go to [NPM](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/en/) for installation, whichever you prefer.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+```
+$ npm -v
+6.5.0
 
-### `npm test`
+$ yarn -v
+1.6.0
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## React JS
 
-### `npm run build`
+This App is built on the [React Js](https://reactjs.org) framework, yea it is totally needed.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+$ npm info react version
+16.7.0
+```
+***
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Installing
 
-### `npm run eject`
+To install the app we will begin by cloning the repository. You may also change the name of the folder on your end.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```JavaScript
+$ git clone https://github.com/crissyCodestar/vimeo.git <YOUR_DIR_NAME>
+$ cd <YOUR_DIR_NAME>
+$ npm install
+```
+Everything should compile from package.json and install your node_modules.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Configure App
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+You will need your own [Vimeo](https://data.donorschoose.org) access token to receive information from the api. If you do not already have a free Vimeo account, register for a new account.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Insert your access_token
 
-## Learn More
+```JavaScript
+  //Located in src folder go to ./util/Vimeo.js
+  //Replace const access_token = process.env.REACT_APP_ACCESS_TOKEN; with...
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  const access_token = 'INSERT_DONORS_API_KEY';
+```
+or if you are publishing or want to add to a public area you can be fancy like myself and create a .env file to protect your access_token.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```JavaScript
+  //Create a .env file in main folder, add...
+
+  REACT_APP_ACCESS_TOKEN='INSERT_DONORS_API_KEY';
+```
+
+# Start App
+
+Now you can explore. Run the start command for React...
+
+```JavaScript
+$ npm start
+```
+
+***
+
+# Languages & Tools
+
+## JavaScript
+
+* React JS for UI framework
+
+## API's
+
+* Vimeo database
+
+***
+
+# Author(s)
+
+Crystal Grant - Initial work
+
+> Programming today is a race between software engineers striving to build bigger and better idiot-proof
+> programs, and the Universe trying to produce bigger and better idiots. So far, the Universe is winning.
+
+> ―- Rick Cook, The Wizardry Compiled
+
+# Vimeo Code Challenge
