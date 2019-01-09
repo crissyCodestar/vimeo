@@ -32,7 +32,7 @@ $ npm info react version
 To install the app we will begin by cloning the repository. You may also change the name of the folder on your end.
 
 ```JavaScript
-$ git clone https://github.com/crissyCodestar/vimeo.git <YOUR_DIR_NAME>
+$ git clone https://github.com/crissyCodestar/vimeo.git  <YOUR_DIR_NAME>
 $ cd <YOUR_DIR_NAME>
 $ npm install
 ```

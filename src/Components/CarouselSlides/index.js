@@ -1,36 +1,53 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Typography, Grid, } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-import Arrow from '../Arrow';
 import carouselStyles from './carouselStyles';
 import './carouselStyles.css';
-let colors = ['#a4004a', '#4a72ed', '#63c3ac', '#bb8134', '#a2a2a2']
+import {Button} from '../Button';
+import BgImage from '../BgImage';
+let colors = ['rgb(162,162,162)', 'rgb(51,145,196)', 'rgb(99,195,172)', 'rgb(193,136,61)', 'rgb(173,173,104)']
 
-const CarouselSlides =({title, children, classes, index, activeIndex, info, media })=>(
 
-<div className={classes.root}>
-  {console.log(info)}
-  <div
+const CarouselSlides =({classes, index, activeIndex, info })=>(
+
+<Grid container className={classes.root} >
+  <Grid item
     className={
       index === activeIndex
       ? classes.carouselItemActive
       : classes.carouselItem
     } >
-    <div className='image'>
-      <div style={{backgroundImage: '  linear-gradient(rgba(0, 0, 0, 0.45), rgba(55, 0, 0, 0.45)),url(' + info.media.link + ')'}} className='blur_bg'/>
-    </div>
-    <Grid container className={classes.root}>
-      <Grid item lg={4} xs={10} >
-        <img src={info.media.link} alt='link' className={classes.itemImage}/>
+    {/* BG Image*/}
+    <div className='layer' style={{backgroundColor:colors[index]}}/>
+      <BgImage img={info.media.link}/>
+
+    <Grid container xs={12} className={classes.infoContainer}>
+      <Grid item lg={3} md={6} xs={8} className={classes.containerImage}>
+          <div className='overview'>
+            <img src={info.media.link} alt='link' className={classes.itemImage} />
+            <div className='box' style={{background: `linear-gradient( transparent, 80%, ${colors[index]})`}}/>
+          </div>
       </Grid>
-      <Grid item lg={4} xs={10}>
-      <Typography  variant="h4" gutterBottom className={classes.title}>{info.title}</Typography>
-        <Typography style={{color: colors[index]}} className={classes.description}>{info.description}</Typography>
+      <Grid container md={5} xs={9} className={classes.gridItem}>
+        <Grid item md={12}  xs={12}>
+          <Typography  variant="h5"  className={classes.title}>{info.title}</Typography>
+        </Grid>
+        <Grid item lg={12}  xs={12} gutterBottom={true} className={classes.descriptionContainer} >
+          <Typography variant="body1"  className={classes.description}>{info.description}</Typography>
+        </Grid>
+        <Grid container xs={12} md={12} spacing={16}>
+          <Grid item xs={6} sm={4} md={5} lg={4} className={classes.button}>
+            <Button text='Buy Now' colorValue='warning' color={colors[index]} />
+          </Grid>
+          <Grid item xs={6} sm={4} md={5} lg={4} className={classes.button}>
+            <Button text='Watch Trailer' link={info.media.link_with_play_button}/>
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
-  </div>
-</div>
+  </Grid>
+</Grid>
 )
 
 

@@ -1,7 +1,6 @@
 
 .blur_bg {
   position: absolute;
-
   width: 200%;
   height: 200%;
   background-position: center center;
@@ -16,20 +15,48 @@
   top: -30px;
   z-index: -1;
   opacity: .85;
-background-blend-mode:darken;
+  background-blend-mode:darken;
 }
 .blur_bg::before {
   width: 100%;
   height: 100%;
   content: '';
-display: block;
-position: absolute;
+  display: block;
+  position: absolute;
 
 }
 
 .image {
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   position: absolute;
   overflow: hidden;
+  opacity: .4;
+  z-index: -1;
+}
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 80vh;
+    z-index: -2;
+}
+
+
+.box {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  filter:  contrast(94%) brightness(85%);
+}
+
+.overview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  position: relative;
 }

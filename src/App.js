@@ -36,7 +36,6 @@ class App extends Component {
   render() {
     const { classes } = this.props
     const { carouselInfo, mainInfo } = this.state
-    console.log("APP",carouselInfo);
     return (
       <div className='App'>
         <Grid container>
