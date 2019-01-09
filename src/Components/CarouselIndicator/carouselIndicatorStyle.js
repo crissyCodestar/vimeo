@@ -8,7 +8,7 @@ export default theme => ({
 
     display: 'block',
     width:'10px',
-    height: '5px',
+    height: '10px',
     backgroundColor: 'white',
     cursor: 'pointer',
     opacity: '.15',
@@ -21,7 +21,7 @@ export default theme => ({
   carouselIndicatorActive: {
     display: 'block',
     width:'10px',
-    height: '5px',
+    height: '10px',
     backgroundColor: 'white',
     cursor: 'pointer',
     opacity: '.15',

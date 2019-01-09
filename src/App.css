@@ -1,5 +1,6 @@
 .App {
-  flex-grow: 1
+  flex-grow: 1;
+  font-family: 'Roboto', sans-serif;
 }
 .paper {
   padding: 2em;

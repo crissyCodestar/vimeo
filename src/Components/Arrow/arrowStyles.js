@@ -1,15 +1,15 @@
 export default theme => ({
   root: {
-    left: '22px',
+    left: '3vw',
     flexGrow: 1,
     position: 'absolute',
     color: 'white',
     cursor: 'pointer',
-    top: '50%',
+    top: '40%',
     diaplay: 'block',
     opacity: '.5',
     zIndex: '2',
-    fontWeight: '900',
+    fontWeight: 'lighter',
     '&:hover': {
       color: '#019de0'
     },
@@ -18,14 +18,15 @@ export default theme => ({
     },
   },
     right: {
-    right: '22px',
+    right: '3vw',
     flexGrow: 1,
     position: 'absolute',
     color: 'white',
     cursor: 'pointer',
-    top: '50%',
+    top: '40%',
     diaplay: 'block',
     opacity: '.5',
+    fontWeight: 'lighter',
     '&:hover': {
       color: '#019de0'
     },

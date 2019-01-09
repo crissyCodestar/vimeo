@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Paper, Grid, Typography, List } from '@material-ui/core';
+import { Grid, List } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import carouselContainerStyles from './carouselContainerStyles';
 import Arrow from '../Arrow';
@@ -73,7 +73,7 @@ class CarouselContainer extends Component {
         size='50'
         onClick={e => this.previousSlide(e)}
         />
-      <Grid container >
+      <Grid container>
         {carouselInfo.map((info, index) =>
           <CarouselSlides
             key={index}
@@ -85,6 +85,7 @@ class CarouselContainer extends Component {
       </Grid>
       <Arrow
         direction='right'
+        size='50'
         onClick={e => this.nextSlide(e)}
         />
       <List className={classes.carouselIndicators}>

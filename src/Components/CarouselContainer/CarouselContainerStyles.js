@@ -5,12 +5,13 @@ export default theme => ({
     display:'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    height: '100vh'
+    alignItems: 'center',
+    height: '80vh',
 
   },
   item: {
     width:'100vw',
-    height: '100vh',
+    height: '80vh',
     textAlign: 'center',
     padding: '50px',
     color: theme.palette.text.secondary,
@@ -21,7 +22,7 @@ export default theme => ({
     justifyContent: 'center',
     width: '100vw',
     position: 'absolute',
-    bottom: '4px'
+    top: '70vh'
   },
 
 });

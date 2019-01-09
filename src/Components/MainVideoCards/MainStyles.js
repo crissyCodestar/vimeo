@@ -26,19 +26,16 @@ export default theme => ({
     width: '100%',
     height: '40vh',
     objectFit: 'cover',
-
   },
   whtImg: {
     width: '100%',
     height: '20vh',
     objectFit: 'cover',
-
   },
   whtDescription: {
     height: '6rem',
     overflow: 'hidden',
     color: 'white',
-
   },
   greyDescription: {
     height: '6rem',
@@ -48,10 +45,7 @@ export default theme => ({
 
   },
   greyTitle: {
-
     color: 'white',
-
-
   },
   whtTitle:{
 
