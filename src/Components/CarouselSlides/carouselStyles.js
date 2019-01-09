@@ -3,17 +3,15 @@ export default theme => ({
   root: {
     flexGrow: 1,
     justifyContent: 'center',
-
-    // alignContent: 'start',
-    // padding: theme.spacing.unit * 2,
   },
   infoContainer: {
     justifyContent: 'center',
     alignItems: 'flex-start',
     paddingTop: '7vh',
-    maxHeight: '65vh',
+    maxHeight: '60vh',
     [theme.breakpoints.down('sm')]: {
           paddingTop: '0',
+
         },
   },
   carouselItem: {
@@ -35,8 +33,6 @@ export default theme => ({
   gridItem: {
     flexGrow: 1,
     padding: theme.spacing.unit * 2,
-
-
   },
   title: {
     color: '#FAFAFA',
@@ -48,6 +44,7 @@ export default theme => ({
   descriptionContainer:{
     height: '6rem',
     paddingTop: theme.spacing.unit * 2,
+
   },
   description: {
     color: '#FAFAFA',
@@ -56,14 +53,12 @@ export default theme => ({
     variant:"body1"
   },
   containerImage: {
-  padding: theme.spacing.unit * 2,
-  width: '100vw',
-  height: '50vh',
-
-
-  // [theme.breakpoints.down('sm')]: {
-  //       padding: '0',
-  //     },
+    padding: theme.spacing.unit * 2,
+    width: '100vw',
+    height: '50vh',
+    [theme.breakpoints.down('md')]: {
+        padding: '0',
+      },
   },
   itemImage: {
     width: '100%',
@@ -71,15 +66,13 @@ export default theme => ({
     objectFit: 'cover',
     position: 'relative',
     zIndex: '1',
-    // [theme.breakpoints.down('sm')]: {
-    //       height: '50vh',
-    //     },
+
 
 },
   image: {
     position: 'relative'
   },
-  // overlay: {
-  //
-  // }
+  // button: {
+  //   width: '100%'
+  // },
 });

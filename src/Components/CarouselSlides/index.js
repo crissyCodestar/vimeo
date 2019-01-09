@@ -4,8 +4,9 @@ import { Typography, Grid, } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import carouselStyles from './carouselStyles';
 import './carouselStyles.css';
-import {Button} from '../Button';
+import { Button } from '../Button';
 import BgImage from '../BgImage';
+import VideoImages from '../VideoImages';
 let colors = ['rgb(162,162,162)', 'rgb(51,145,196)', 'rgb(99,195,172)', 'rgb(193,136,61)', 'rgb(173,173,104)']
 
 
@@ -18,17 +19,15 @@ const CarouselSlides =({classes, index, activeIndex, info })=>(
       ? classes.carouselItemActive
       : classes.carouselItem
     } >
-    {/* BG Image*/}
+
     <div className='layer' style={{backgroundColor:colors[index]}}/>
       <BgImage img={info.media.link}/>
 
     <Grid container xs={12} className={classes.infoContainer}>
-      <Grid item lg={3} md={6} xs={8} className={classes.containerImage}>
-          <div className='overview'>
-            <img src={info.media.link} alt='link' className={classes.itemImage} />
-            <div className='box' style={{background: `linear-gradient( transparent, 80%, ${colors[index]})`}}/>
-          </div>
-      </Grid>
+      <VideoImages
+        vidImg={info.media.link}
+        vidImgColor={colors[index]}/>
+        {/*Info*/}
       <Grid container md={5} xs={9} className={classes.gridItem}>
         <Grid item md={12}  xs={12}>
           <Typography  variant="h5"  className={classes.title}>{info.title}</Typography>
@@ -36,6 +35,7 @@ const CarouselSlides =({classes, index, activeIndex, info })=>(
         <Grid item lg={12}  xs={12} gutterBottom={true} className={classes.descriptionContainer} >
           <Typography variant="body1"  className={classes.description}>{info.description}</Typography>
         </Grid>
+        {/*Buttons*/}
         <Grid container xs={12} md={12} spacing={16}>
           <Grid item xs={6} sm={4} md={5} lg={4} className={classes.button}>
             <Button text='Buy Now' colorValue='warning' color={colors[index]} />
@@ -52,8 +52,6 @@ const CarouselSlides =({classes, index, activeIndex, info })=>(
 
 
 CarouselSlides.propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.node,
   classes: PropTypes.object.isRequired,
 };
 
