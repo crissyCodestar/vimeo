@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, List } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-import carouselContainerStyles from './carouselContainerStyles';
+import carouselContainerStyle from './carouselContainerStyle';
 import Arrow from '../Arrow';
 import CarouselIndicator from '../CarouselIndicator';
 import CarouselSlides from '../CarouselSlides';
@@ -108,4 +108,4 @@ CarouselContainer.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(carouselContainerStyles)(CarouselContainer);
+export default withStyles(carouselContainerStyle)(CarouselContainer);

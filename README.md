@@ -40,6 +40,9 @@ Everything should compile from package.json and install your node_modules.
 
 ## Configure App
 
+```JavaScript
+!Important
+```
 You will need your own [Vimeo](https://data.donorschoose.org) access token to receive information from the api. If you do not already have a free Vimeo account, register for a new account.
 
 ### Insert your access_token
